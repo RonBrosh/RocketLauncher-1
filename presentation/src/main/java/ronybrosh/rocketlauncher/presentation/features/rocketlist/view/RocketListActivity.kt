@@ -74,6 +74,7 @@ class RocketListActivity : ViewModelActivity<RocketListViewModel>(
 
         observe(viewModel.getResult()) { result ->
             adapter.setData(result)
+            recyclerView.scheduleLayoutAnimation()
         }
     }
 

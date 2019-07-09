@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:layoutAnimation="@anim/recycler_view_add_item"
             android:paddingTop="?attr/actionBarSize"
             android:paddingBottom="@dimen/spacing_small" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -27,9 +28,9 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/blue"
         android:transitionName="transition_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
