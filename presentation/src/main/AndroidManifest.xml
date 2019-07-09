@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ronybrosh.rocketlauncher.presentation">
+
+    <application>
+        <activity
+            android:name=".features.splash.view.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ronybrosh.rocketlauncher.presentation.features.rocketlist.view.RocketListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="ronybrosh.rocketlauncher.presentation.features.rocketdetails.view.RocketDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentStatusBarActivity" />
+    </application>
+</manifest>

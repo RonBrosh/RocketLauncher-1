@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="56dp"
+    android:viewportWidth="200"
+    android:viewportHeight="56">
+
+    <path
+        android:name="splash_tip"
+        android:pathData="
+        M0,0 0,42
+        C0,50 70,70 111,32
+        C150,-3 200,10 200,10
+        M 200,10 200,0 0,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endColor="#42A5F5"
+                android:endX="0"
+                android:endY="40"
+                android:startColor="#03A9F4"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear" />
+
+        </aapt:attr>
+    </path>
+</vector>

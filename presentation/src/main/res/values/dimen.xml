@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_huge">48dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+    <!-- Shadow -->
+    <dimen name="shadow_height">5dp</dimen>
+
+    <!-- Font size -->
+    <integer name="bar_chart_value_text_size">12</integer>
+
+    <!-- Launch list items -->
+    <dimen name="launch_list_item_patch_image_size">80dp</dimen>
+
+</resources>

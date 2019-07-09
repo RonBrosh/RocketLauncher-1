@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/spacing_normal"
+    android:paddingTop="@dimen/spacing_normal"
+    android:paddingEnd="@dimen/spacing_normal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_case_title"
+        android:textAppearance="@style/Subtitle1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_case_description"
+        android:textAppearance="@style/Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/show_case_features_title"
+        android:textAppearance="@style/Subtitle1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:drawableStart="@drawable/ic_bullet_point"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:text="@string/show_case_feature_1"
+        android:textAppearance="@style/Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:drawableStart="@drawable/ic_bullet_point"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:text="@string/show_case_feature_2"
+        android:textAppearance="@style/Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:drawableStart="@drawable/ic_bullet_point"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:text="@string/show_case_feature_3"
+        android:textAppearance="@style/Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:drawableStart="@drawable/ic_bullet_point"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:text="@string/show_case_feature_4"
+        android:textAppearance="@style/Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:drawableStart="@drawable/ic_bullet_point"
+        android:drawablePadding="@dimen/spacing_normal"
+        android:text="@string/show_case_feature_5"
+        android:textAppearance="@style/Body1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/isShowWelcomeSwitch"
+            android:paddingEnd="@dimen/spacing_normal"
+            android:text="@string/show_case_toggle_title"
+            android:textAppearance="@style/Subtitle1" />
+
+        <Switch
+            android:id="@+id/isShowWelcomeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:checked="true" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/continueButton"
+        style="@style/Button.Contained"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/splash_screen_continue_button_text"
+        android:textAppearance="@style/Button"
+        android:textColor="@color/white" />
+</LinearLayout>

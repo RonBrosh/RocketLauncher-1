@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">RocketLauncher</string>
+    <string name="github_account_url">https://github.com/RonyBrosh?tab=repositories</string>
+
+    <!-- Splash screen -->
+    <string name="splash_screen_app_name">Rocket\nLauncher</string>
+    <string name="splash_screen_created_by">Developed by github.com/RonyBrosh</string>
+    <string name="show_case_title">Showcase App:</string>
+    <string name="show_case_description">
+        Get real rocket-launching information from open source REST API.
+        Clicking a rocket item from the list will open a screen with its additional details and images.
+        Both screens can be refreshed by \"Pull to Refresh\" gesture. You can check out this app\'s full source code in my Github account (click the link at the bottom of this screen).
+    </string>
+    <string name="show_case_features_title">Including:</string>
+    <string name="show_case_feature_1">Clean architecture</string>
+    <string name="show_case_feature_2">Pure Kotlin</string>
+    <string name="show_case_feature_3">Transitions</string>
+    <string name="show_case_feature_4">Dagger 2</string>
+    <string name="show_case_feature_5">Rx Java</string>
+    <string name="show_case_toggle_title">Show this screen on every app launch</string>
+    <string name="splash_screen_continue_button_text">Continue</string>
+
+    <!-- Rocket list screen -->
+    <string name="rocket_list_active_label">Rocket is active</string>
+
+    <!-- Common rocket details -->
+    <string name="engines_count_format">%1$d engines</string>
+
+    <!-- Rocket details screen -->
+    <string name="rocket_details_screen_bar_chart_label">Launches per Year</string>
+    <string name="rocket_details_screen_bar_chart_no_data_message">No chart data…</string>
+    <string name="rocket_details_screen_is_mission_successful_true">Mission was successful!</string>
+    <string name="rocket_details_screen_is_mission_successful_false">Mission failed…</string>
+
+</resources>
