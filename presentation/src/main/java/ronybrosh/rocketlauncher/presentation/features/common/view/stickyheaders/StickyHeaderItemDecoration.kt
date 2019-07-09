@@ -36,7 +36,8 @@ class StickyHeaderItemDecoration(private val drawable: Drawable?, private val li
             }
         }
 
-        for (index: Int in 1 until parent.childCount) {
+        // Iterate all children but the last one as we don't want to draw divider for the last child.
+        for (index: Int in 0 until parent.childCount - 1) {
             // If this child or the next is a header, don't draw the divider.
             if (isChildHeader(index, parent) || isChildHeader(index + 1, parent))
                 continue
@@ -121,7 +122,7 @@ class StickyHeaderItemDecoration(private val drawable: Drawable?, private val li
     }
 
     private fun getChildInContact(parent: RecyclerView, contactPoint: Int, currentHeaderPosition: Int): View? {
-        for (index: Int in 1 until parent.childCount) {
+        for (index: Int in 0 until parent.childCount) {
             var heightTolerance = 0
             parent.getChildAt(index)?.let { child ->
                 //measure height tolerance with child if child is another header

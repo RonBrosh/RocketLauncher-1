@@ -78,11 +78,12 @@ class RocketDetailsActivity : ViewModelActivity<RocketDetailsViewModel>(
     }
 
     private fun initRecyclerView() {
-        val typedArray: TypedArray = obtainStyledAttributes(intArrayOf(android.R.attr.listDivider))
-        val drawable: Drawable? = typedArray.getDrawable(0)
-        typedArray.recycle()
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        recyclerView.addItemDecoration(StickyHeaderItemDecoration(drawable, adapter))
+        recyclerView.addItemDecoration(
+            StickyHeaderItemDecoration(
+                resources.getDrawable(R.drawable.list_divider, null), adapter
+            )
+        )
         recyclerView.adapter = adapter
     }
 
