@@ -56,6 +56,9 @@ dependencies {
     // Life Cycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
 

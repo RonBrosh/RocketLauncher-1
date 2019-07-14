@@ -8,7 +8,8 @@
     <color name="black_47">#78000000</color>
     <color name="blue">#42A5F5</color>
     <color name="blue_dark">#2196F3</color>
+    <color name="purple">#a06aff</color>
     <color name="purple_dark">#8516ff</color>
     <color name="purple_dark_more">#4B579B</color>
-
+    <color name="pink_light">#ffabe7</color>
 </resources>

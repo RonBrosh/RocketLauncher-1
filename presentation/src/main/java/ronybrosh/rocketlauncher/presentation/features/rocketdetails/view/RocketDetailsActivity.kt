@@ -1,7 +1,5 @@
 package ronybrosh.rocketlauncher.presentation.features.rocketdetails.view
 
-import android.content.res.TypedArray
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
@@ -10,12 +8,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_rocket_details.*
+import kotlinx.android.synthetic.main.activity_rocket_details.recyclerView
+import kotlinx.android.synthetic.main.activity_rocket_details.swipeRefreshLayout
+import kotlinx.android.synthetic.main.activity_rocket_details.toolbar
+import kotlinx.android.synthetic.main.activity_rocket_list.*
 import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 import ronybrosh.rocketlauncher.presentation.features.common.view.ViewModelActivity
 import ronybrosh.rocketlauncher.presentation.features.common.view.stickyheaders.StickyHeaderItemDecoration
+import ronybrosh.rocketlauncher.presentation.utils.SnackbarUtil
 import ronybrosh.rocketlauncher.presentation.utils.observe
-import timber.log.Timber
 
 class RocketDetailsActivity : ViewModelActivity<RocketDetailsViewModel>(
     RocketDetailsViewModel::class.java
@@ -55,8 +57,10 @@ class RocketDetailsActivity : ViewModelActivity<RocketDetailsViewModel>(
             swipeRefreshLayout.isRefreshing = isLoading
         }
 
-        observe(viewModel.getError()) { errorMessage ->
-            Timber.e(errorMessage)
+        observe(viewModel.getError()) { errorMessageResourceId ->
+            SnackbarUtil.showWithRetryAction(getString(errorMessageResourceId), rocketDetailsRootView) {
+                viewModel.refresh()
+            }
         }
 
         observe(viewModel.getResult()) { result ->

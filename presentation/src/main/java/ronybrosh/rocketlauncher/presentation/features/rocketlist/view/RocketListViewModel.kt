@@ -4,6 +4,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import ronybrosh.rocketlauncher.domain.entities.ResultState
 import ronybrosh.rocketlauncher.domain.entities.Rocket
 import ronybrosh.rocketlauncher.domain.usecases.RocketListUseCase
+import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 import ronybrosh.rocketlauncher.presentation.features.common.view.BaseViewModel
 import timber.log.Timber
@@ -38,8 +39,9 @@ class RocketListViewModel @Inject constructor(private val useCase: RocketListUse
                     }
                 }
                 is ResultState.Error -> {
+                    Timber.e(resultState.throwable.localizedMessage)
                     loading.value = false
-                    error.value = resultState.throwable.localizedMessage
+                    error.value = R.string.error_fetching_rocket_list
                 }
             }
         })

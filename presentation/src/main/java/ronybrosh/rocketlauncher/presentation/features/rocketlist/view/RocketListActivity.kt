@@ -19,8 +19,8 @@ import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 import ronybrosh.rocketlauncher.presentation.features.common.view.ViewModelActivity
 import ronybrosh.rocketlauncher.presentation.features.rocketdetails.view.RocketDetailsActivity
+import ronybrosh.rocketlauncher.presentation.utils.SnackbarUtil
 import ronybrosh.rocketlauncher.presentation.utils.observe
-import timber.log.Timber
 
 class RocketListActivity : ViewModelActivity<RocketListViewModel>(
     RocketListViewModel::class.java
@@ -64,8 +64,8 @@ class RocketListActivity : ViewModelActivity<RocketListViewModel>(
             swipeRefreshLayout.isRefreshing = isLoading
         }
 
-        observe(viewModel.getError()) { errorMessage ->
-            Timber.e(errorMessage)
+        observe(viewModel.getError()) { errorMessageResourceId ->
+            SnackbarUtil.showWithDismissAction(getString(errorMessageResourceId), rocketListRootView)
         }
 
         observe(viewModel.getResult()) { result ->

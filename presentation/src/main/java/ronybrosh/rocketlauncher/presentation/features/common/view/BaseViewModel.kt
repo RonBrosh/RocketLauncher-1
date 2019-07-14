@@ -9,14 +9,14 @@ abstract class BaseViewModel<T> : ViewModel() {
     protected val compositeDisposable = CompositeDisposable()
 
     protected val loading: MutableLiveData<Boolean> = MutableLiveData()
-    protected val error: MutableLiveData<String> = MutableLiveData()
+    protected val error: MutableLiveData<Int> = MutableLiveData()
     protected val result: MutableLiveData<T> = MutableLiveData()
 
     fun getLoading(): LiveData<Boolean> {
         return loading
     }
 
-    fun getError(): LiveData<String> {
+    fun getError(): LiveData<Int> {
         return error
     }
 

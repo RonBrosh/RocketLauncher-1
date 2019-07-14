@@ -32,4 +32,10 @@
     <string name="rocket_details_screen_is_mission_successful_true">Mission was successful!</string>
     <string name="rocket_details_screen_is_mission_successful_false">Mission failed…</string>
 
+    <!-- Error -->
+    <string name="error_dismiss_button">Close</string>
+    <string name="error_retry_button">Retry</string>
+    <string name="error_fetching_rocket_list">Can\'t fetch rocket list…\nDo you have internet connection?</string>
+    <string name="error_fetching_rocket_details">Can\'t fetch rocket details!\nClick the RETRY button to try again.</string>
+
 </resources>

@@ -38,8 +38,9 @@ class RocketDetailsViewModel @Inject constructor(private val useCase: LaunchList
                     result.value = createRecyclerViewData(infoEntry, dataGroupedByYear)
                 }
                 is ResultState.Error -> {
+                    Timber.e(resultState.throwable.localizedMessage)
                     loading.value = false
-                    error.value = resultState.throwable.localizedMessage
+                    error.value = R.string.error_fetching_rocket_details
                 }
             }
         })
