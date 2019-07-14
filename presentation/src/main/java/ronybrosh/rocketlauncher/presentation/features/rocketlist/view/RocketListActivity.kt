@@ -9,10 +9,12 @@ import android.view.Window
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import jp.wasabeef.recyclerview.animators.FadeInAnimator
+import jp.wasabeef.recyclerview.animators.ScaleInAnimator
 import kotlinx.android.synthetic.main.activity_rocket_list.*
-import kotlinx.android.synthetic.main.viewholder_rocket_item.view.*
 import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 import ronybrosh.rocketlauncher.presentation.features.common.view.ViewModelActivity
@@ -22,7 +24,7 @@ import timber.log.Timber
 
 class RocketListActivity : ViewModelActivity<RocketListViewModel>(
     RocketListViewModel::class.java
-), View.OnClickListener {
+), (PresentableRocket, View) -> Unit {
 
     private val adapter: RocketListAdapter = RocketListAdapter(this)
     private var filterMenuItem: MenuItem? = null
@@ -53,14 +55,8 @@ class RocketListActivity : ViewModelActivity<RocketListViewModel>(
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onClick(view: View?) {
-        if (view == null)
-            return
-        view.tag.let { tag ->
-            if (tag is PresentableRocket) {
-                showRocketDetails(view.rocketImage, tag)
-            }
-        }
+    override fun invoke(presentableRocket: PresentableRocket, sharedElementView: View) {
+        showRocketDetails(sharedElementView, presentableRocket)
     }
 
     private fun setupViewModel() {
@@ -73,8 +69,22 @@ class RocketListActivity : ViewModelActivity<RocketListViewModel>(
         }
 
         observe(viewModel.getResult()) { result ->
-            adapter.setData(result)
-            recyclerView.scheduleLayoutAnimation()
+            filterMenuItem?.let {
+                recyclerView.itemAnimator = when (it.isChecked) {
+                    true -> DefaultItemAnimator()
+                    false -> {
+                        when (result.size) {
+                            0 -> {
+                                FadeInAnimator()
+                            }
+                            else -> {
+                                ScaleInAnimator()
+                            }
+                        }
+                    }
+                }
+            }
+            adapter.submitList(result)
         }
     }
 

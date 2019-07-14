@@ -67,6 +67,7 @@ dependencies {
 
     // Recycler View
     implementation "androidx.recyclerview:recyclerview:$androidx_views_version"
+    implementation 'jp.wasabeef:recyclerview-animators:3.0.0'
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$picasso_version"

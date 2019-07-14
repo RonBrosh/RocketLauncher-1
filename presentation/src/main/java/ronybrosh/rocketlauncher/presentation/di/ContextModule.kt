@@ -2,7 +2,6 @@ package ronybrosh.rocketlauncher.presentation.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import ronybrosh.rocketlauncher.presentation.features.rocketlist.view.RocketListFragment
 import ronybrosh.rocketlauncher.presentation.features.rocketdetails.view.RocketDetailsActivity
 import ronybrosh.rocketlauncher.presentation.features.rocketlist.view.RocketListActivity
 import ronybrosh.rocketlauncher.presentation.features.splash.view.SplashActivity

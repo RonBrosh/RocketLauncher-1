@@ -5,16 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.viewholder_rocket_item.view.*
 import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 
-class RocketListAdapter(private val clickListener: View.OnClickListener) :
-    RecyclerView.Adapter<RocketListAdapter.RocketListViewHolder>() {
+class RocketListAdapter(private val clickListener: (PresentableRocket, View) -> Unit) :
+    ListAdapter<PresentableRocket, RocketListAdapter.RocketListViewHolder>(RocketDiffCallback()) {
 
-    private var data: List<PresentableRocket> = emptyList()
+    class RocketDiffCallback : DiffUtil.ItemCallback<PresentableRocket>() {
+        override fun areItemsTheSame(oldItem: PresentableRocket, newItem: PresentableRocket): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: PresentableRocket, newItem: PresentableRocket): Boolean {
+            return oldItem == newItem
+        }
+    }
 
     inner class RocketListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val placeHolder: Drawable? = itemView.context.getDrawable(R.drawable.ic_image_place_holder)
@@ -26,14 +36,10 @@ class RocketListAdapter(private val clickListener: View.OnClickListener) :
                 itemView.context.getString(R.string.engines_count_format, data.enginesCount)
             Picasso.with(itemView.context).load(data.imageUrl).placeholder(placeHolder).into(itemView.rocketImage)
             ViewCompat.setTransitionName(itemView.rocketImage, data.id)
-            itemView.tag = data
-            itemView.setOnClickListener(clickListener)
+            itemView.setOnClickListener {
+                clickListener(data, itemView.rocketImage)
+            }
         }
-    }
-
-    fun setData(data: List<PresentableRocket>) {
-        this.data = data
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RocketListViewHolder {
@@ -46,11 +52,7 @@ class RocketListAdapter(private val clickListener: View.OnClickListener) :
         )
     }
 
-    override fun getItemCount(): Int {
-        return data.size
-    }
-
     override fun onBindViewHolder(holder: RocketListViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(getItem(position))
     }
 }
