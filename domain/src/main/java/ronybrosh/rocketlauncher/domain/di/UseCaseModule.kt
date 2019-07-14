@@ -8,8 +8,6 @@ import ronybrosh.rocketlauncher.domain.repositories.SplashRepository
 import ronybrosh.rocketlauncher.domain.usecases.LaunchListUseCase
 import ronybrosh.rocketlauncher.domain.usecases.RocketListUseCase
 import ronybrosh.rocketlauncher.domain.usecases.SplashUseCase
-import javax.inject.Singleton
-
 
 @Module
 class UseCaseModule {

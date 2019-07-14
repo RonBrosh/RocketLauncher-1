@@ -1,7 +1,6 @@
 package ronybrosh.rocketlauncher.data.api
 
 import io.reactivex.Flowable
-import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 import ronybrosh.rocketlauncher.data.api.model.LaunchApiData

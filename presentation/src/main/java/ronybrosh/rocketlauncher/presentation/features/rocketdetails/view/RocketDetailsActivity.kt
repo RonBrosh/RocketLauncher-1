@@ -8,10 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_rocket_details.*
-import kotlinx.android.synthetic.main.activity_rocket_details.recyclerView
-import kotlinx.android.synthetic.main.activity_rocket_details.swipeRefreshLayout
-import kotlinx.android.synthetic.main.activity_rocket_details.toolbar
-import kotlinx.android.synthetic.main.activity_rocket_list.*
 import ronybrosh.rocketlauncher.presentation.R
 import ronybrosh.rocketlauncher.presentation.features.common.model.PresentableRocket
 import ronybrosh.rocketlauncher.presentation.features.common.view.ViewModelActivity
