@@ -14,7 +14,7 @@ Another App module exist for wrapping everything together, this way I keeping a 
 
 Download this repository as Zip or checkout the source code.
 A showcase app is available on Google Play at:
-* [Dropwizard](https://play.google.com/store/apps/details?id=ronybrosh.rocketlauncher.app) - Free download
+* [Rocket Launcher](https://play.google.com/store/apps/details?id=ronybrosh.rocketlauncher.app) - Free download
 
 ## License
 
@@ -24,6 +24,6 @@ Use it as a guide for your projects or go through the code while learning clean 
 ## Acknowledgments
 
 To complete this project I've read many Medium blogs, Android developers blog and books:
-* [Dropwizard](https://www.amazon.co.uk/Kotlin-Action-Dmitry-Jemerov/dp/1617293296/ref=sr_1_1?keywords=kotlin+in+action&qid=1564334367&s=books&sr=1-1) - Kotlin 
-* [Dropwizard](https://www.amazon.co.uk/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164) - Clean architecture
-* [Dropwizard](https://www.amazon.co.uk/Learning-RxJava-Concurrent-responsive-applications/dp/1787120422/ref=sr_1_2?keywords=rxjava+book&qid=1564334222&s=books&sr=1-2) - Rx Java
+* [Kotlin](https://www.amazon.co.uk/Kotlin-Action-Dmitry-Jemerov/dp/1617293296/ref=sr_1_1?keywords=kotlin+in+action&qid=1564334367&s=books&sr=1-1) 
+* [Clean architecture](https://www.amazon.co.uk/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
+* [Rx Java](https://www.amazon.co.uk/Learning-RxJava-Concurrent-responsive-applications/dp/1787120422/ref=sr_1_2?keywords=rxjava+book&qid=1564334222&s=books&sr=1-2)
