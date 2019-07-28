@@ -18,7 +18,7 @@ A showcase app is available on Google Play at:
 
 ## License
 
-This project is licensed under Apache License Version 2.0.
+This project is licensed under [Apache License Version 2.0.](https://github.com/RonyBrosh/RocketLauncher/blob/master/LICENSE)
 Use it as a guide for your projects or go through the code while learning clean architecture.
 
 ## Acknowledgments
