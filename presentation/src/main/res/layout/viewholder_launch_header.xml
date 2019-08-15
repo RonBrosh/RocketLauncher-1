@@ -7,6 +7,7 @@
     android:background="@color/blue"
     android:paddingStart="@dimen/spacing_normal"
     android:paddingTop="@dimen/spacing_small"
+    android:paddingEnd="@dimen/spacing_normal"
     android:paddingBottom="@dimen/spacing_small"
     android:textAppearance="@style/H6"
     android:textColor="@color/white"

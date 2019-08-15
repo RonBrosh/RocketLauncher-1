@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/isShowWelcomeSwitch"
+            android:paddingStart="@dimen/spacing_normal"
             android:paddingEnd="@dimen/spacing_normal"
             android:text="@string/show_case_toggle_title"
             android:textAppearance="@style/Subtitle1" />
